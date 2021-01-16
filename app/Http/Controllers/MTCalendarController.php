@@ -62,7 +62,7 @@ class MTCalendarController extends Controller
     {
         session_start();
 
-        $rurl = action('gCalendarController@oauth');
+        $rurl = action('MTCalendarController@oauth');
         $this->client->setRedirectUri($rurl);
         if (!isset($_GET['code'])) {
             $auth_url = $this->client->createAuthUrl();

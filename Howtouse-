@@ -1,0 +1,38 @@
+How to use-
+
+1- git clone - https://github.com/phpwebdigger/MTCalenda.git
+2- composer update
+3- change the storage permission chmod -R 0775 storage/logs
+4- change Mysql Connection databse in .evn files
+	- 
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=MTCalendar
+DB_USERNAME=root
+DB_PASSWORD=root
+
+5- Google calendar api json file path- 
+	projectfolder/public/client_secret.json
+
+6 - Create a virtual host if requied
+
+	<VirtualHost *:80>
+		ServerName  localhost
+        DocumentRoot /var/www/html/Mtcalendar/public
+
+	</VirtualHost>
+
+
+7 - Main access url -
+
+	1 - http://localhost/loadcalapidata
+
+8- Add event in google calendar
+	1- http://localhost/create
+
+9 - get calendra Api events
+   
+   http://localhost/api/cal	 
+
+
