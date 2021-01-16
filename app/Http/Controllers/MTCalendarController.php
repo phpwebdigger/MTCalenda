@@ -104,13 +104,7 @@ class MTCalendarController extends Controller
             $service = new Google_Service_Calendar($this->client);
 
             $calendarId = 'primary';
-            // $event = new Google_Service_Calendar_Event([
-            //     'summary' => $request->title,
-            //     'description' => $request->description,
-            //     'start' => ['dateTime' => $startDateTime],
-            //     'end' => ['dateTime' => $endDateTime],
-            //     'reminders' => ['useDefault' => true],
-            // ]);
+          
 
            $event = new Google_Service_Calendar_Event(array(
   'summary' => $request->title,
