@@ -1,4 +1,6 @@
 How to use-
+Start Time - 16-01-2021 13:00:00 
+End Time - 16-01-2021   19:40:00
 
 1- git clone - https://github.com/phpwebdigger/MTCalenda.git
 2- composer update
@@ -11,6 +13,20 @@ DB_PORT=3306
 DB_DATABASE=MTCalendar
 DB_USERNAME=root
 DB_PASSWORD=root
+
+Db Table create - 
+
+CREATE TABLE `m_tfullcalendars` (
+ `id` int unsigned NOT NULL AUTO_INCREMENT,
+ `summary` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+ `description` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+ `start` timestamp NOT NULL,
+ `end` timestamp NOT NULL,
+ `created_at` timestamp NULL DEFAULT NULL,
+ `updated_at` timestamp NULL DEFAULT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+
 
 5- Google calendar api json file path- 
 	projectfolder/public/client_secret.json
@@ -34,5 +50,8 @@ DB_PASSWORD=root
 9 - get calendra Api events
    
    http://localhost/api/cal	 
+ 
+10 - Display Data from google calendra
+	- http://localhost/loadcalapidata
 
 

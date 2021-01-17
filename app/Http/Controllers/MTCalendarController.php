@@ -122,7 +122,7 @@ class MTCalendarController extends Controller
     
   ),
   'attendees' => array(
-    array('email' => 'abck5752@gmail.com')
+    array('email' => 'demo@gmail.com')
    
   ),
   'reminders' => array(
@@ -134,12 +134,16 @@ class MTCalendarController extends Controller
   ),
 ));
 
+
              $results = $service->events->insert($calendarId, $event);
 
 
             if (!$results) {
                 return response()->json(['status' => 'error', 'message' => 'Something went wrong']);
             }
+
+            MTfullcalendar::create(['summary'=>$request->title,'description'=>isset($request->description)?$request->description:'NULL','start'=>Carbon::parse($startDateTime),'end'=>Carbon::parse($endDateTime)]);
+            
             return response()->json(['status' => 'success', 'message' => 'Event Created']);
         } else {
             return redirect()->route('oauthCallback');

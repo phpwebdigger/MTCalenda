@@ -9,5 +9,5 @@ class MTfullcalendar extends Model
 {
     use HasFactory;
     public $timestamps = true;
-     protected $fillable = ['summary','start','end','created_at','updated_at'];
+     protected $fillable = ['summary','description','start','end','created_at','updated_at'];
 }
